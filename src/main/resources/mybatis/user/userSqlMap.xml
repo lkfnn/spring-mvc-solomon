@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- CodeGen By 李凯飞 -->
+<mapper namespace="org.solomon.dao.PersonMapper">
+
+    <insert id="insertUserInfo"
+            parameterType="org.solomon.dto.UserInfoDTO">
+        INSERT INTO userInfo (id, username, password)
+        VALUES (#{id}, #{username}, #{password})
+    </insert>
+
+    <delete id="deleteUserInfoById" parameterType="string">
+        DELETE FROM userInfo
+         WHERE id = #{id}
+    </delete>
+
+    <update id="updatePasswordById" parameterType="org.solomon.dto.UserInfoDTO">
+        UPDATE userInfo
+           SET password = #{password}
+         WHERE id = #{id}
+    </update>
+
+    <select id="getUserInfoById" parameterType="string" resultType="org.solomon.dto.UserInfoDTO">
+        SELECT id, username, password
+          FROM userInfo
+         WHERE id = #{id}
+    </select>
+
+    <select id="findUserInfoList" resultType="org.solomon.dto.UserInfoDTO">
+        SELECT id, username, password
+          FROM userInfo
+    </select>
+
+</mapper>
