@@ -31,23 +31,20 @@
         </dependency>
 
         <!--1.志相关依赖 -->
-        <!--slf4j规范接口 -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.12</version>
+            <version>1.7.21</version>
         </dependency>
-        <!--logback日志 -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
-            <version>1.1.1</version>
+            <version>1.2.3</version>
         </dependency>
-        <!--实现slf4j接口并整合 -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.1.1</version>
+            <version>1.2.3</version>
         </dependency>
         <!-- 阿里druid数据源,优化数据库操作 -->
         <dependency>

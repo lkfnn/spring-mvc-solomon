@@ -10,23 +10,34 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * HelloWorldController
  * 
  * @author likf
  */
 @RestController
+@Slf4j
 public class HelloWorldController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView index() {
         ModelAndView mav = new ModelAndView("home");
         mav.addObject("say", "Hello World");
+        log.debug("【debug】index");
+        log.info("【info】index");
+        log.warn("【warn】index");
+        log.error("【error】index");
         return mav;
     }
 
     @RequestMapping(value = "/say/{say}", method = RequestMethod.GET)
     public String sayHelloWorld(@PathVariable String say) {
+        log.debug("【debug】sayHelloWorld");
+        log.info("【info】sayHelloWorld");
+        log.warn("【warn】sayHelloWorld");
+        log.error("【error】sayHelloWorld");
         return say;
     }
 
