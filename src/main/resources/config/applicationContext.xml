@@ -14,6 +14,9 @@
 
     <context:component-scan base-package="org.solomon.**.service"/>
 
+    <import resource="classpath:/config/spring-mybatis.xml" />
+    <import resource="classpath:/config/spring-quartz.xml" />
+
     <!-- 配置数据源, 整合其他框架, 事务等. -->
     <!-- 设置读取资源文件 -->
     <bean id="propertyConfigurer"

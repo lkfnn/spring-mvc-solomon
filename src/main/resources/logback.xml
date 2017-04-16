@@ -7,7 +7,7 @@
     <!-- 控制台输出日志 -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{mm:ss} %-5level %logger{36} >>> %msg%n</pattern>
+            <pattern>%d{HH:mm:ss} %-5level %logger{36} >>> %msg%n</pattern>
         </encoder>
     </appender>
 
@@ -15,7 +15,7 @@
     <appender name="DayFile"  class="ch.qos.logback.core.rolling.RollingFileAppender">   
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!--日志文件输出的文件名-->
-            <FileNamePattern>${catalina.base}/logs/%d{yyyy-MM-dd}.log</FileNamePattern> 
+            <FileNamePattern>${LOG_HOME}/logs/%d{yyyy-MM-dd}.log</FileNamePattern> 
             <!--日志文件保留天数-->
             <MaxHistory>30</MaxHistory>
         </rollingPolicy>   
