@@ -12,10 +12,10 @@
         http://www.springframework.org/schema/jdbc
         http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
 
-    <context:component-scan base-package="org.solomon.**.service"/>
-
     <import resource="classpath:/config/spring-mybatis.xml" />
     <import resource="classpath:/config/spring-quartz.xml" />
+
+    <context:component-scan base-package="org.solomon.**.service"/>
 
     <!-- 配置数据源, 整合其他框架, 事务等. -->
     <!-- 设置读取资源文件 -->
