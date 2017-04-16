@@ -4,7 +4,7 @@ Spring-Webmvc-Mybatis 开发框架实践。
 
 项目采用Maven构建。
 
-基础框架集成了Mybatis、Lombok、SpringJUnit4、Logback。
+基础框架集成了Spring、Spring-Webmvc、Mybatis、Logback、SpringJUnit4、Lombok、H2数据库、Druid数据源和SQL监控后台。
 
 2017-04-16 增加了JavaMail支持，可以添加附件。
 
