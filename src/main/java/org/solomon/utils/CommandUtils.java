@@ -1,6 +1,7 @@
 package org.solomon.utils;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Properties;
 
@@ -19,13 +20,14 @@ import java.util.Properties;
 public class CommandUtils {
 
     /**
-     * 执行命令
+     * 执行CMD命令
      * 
      * @param commandLine
      * @return String 执行结果
+     * @throws IOException
      * @throws Exception
      */
-    public static String execute(String commandLine) throws Exception {
+    public static String execute(String commandLine) throws IOException {
 
         String[] cmd = new String[3];
         Properties props = System.getProperties();
@@ -52,5 +54,13 @@ public class CommandUtils {
         input.close();
         ps.destroy();
         return result;
+    }
+
+    public static void main(String[] args) {
+        try {
+            System.out.println(execute("systeminfo"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
