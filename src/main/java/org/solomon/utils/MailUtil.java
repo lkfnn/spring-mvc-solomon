@@ -26,12 +26,9 @@ import javax.mail.internet.MimeUtility;
  * <p>
  * Copyright: Copyright (c) 2017
  * </p>
- * <p>
- * Company: 长城数字[www.e-u.cn]
- * </p>
  * 
  */
-public class SendMailUtil {
+public class MailUtil {
 
     /** 发件人地址 */
     private String mailFrom = "";
@@ -163,7 +160,7 @@ public class SendMailUtil {
     }
 
     public static void main(String[] args) {
-        SendMailUtil cn = new SendMailUtil();
+        MailUtil cn = new MailUtil();
         // 设置发件人、邮件标题、邮件内容。
         cn.setFrom("XXXX@qq.com", "【SendMailUtil-Test】这是邮件标题", "这里是邮件内容。");
 
