@@ -26,9 +26,6 @@ import org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream;
  * <p>
  * Copyright: Copyright (c) 2017
  * </p>
- * <p>
- * Company: 长城数字[www.e-u.cn]
- * </p>
  * 
  */
 public class ZipUtil {
