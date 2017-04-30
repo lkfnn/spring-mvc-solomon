@@ -21,7 +21,7 @@ import org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream;
  * Title: ZIP压缩解压缩工具类
  * </p>
  * <p>
- * Description: 邮件发送工具类
+ * Description: ZIP压缩解压缩工具类
  * </p>
  * <p>
  * Copyright: Copyright (c) 2017
