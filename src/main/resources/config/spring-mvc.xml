@@ -10,6 +10,8 @@
     http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
 
     <context:component-scan base-package="org.solomon.**.controller"/>
+    
+    <mvc:default-servlet-handler/>
 
     <!-- 配置视图解析器，下面是针对jsp作为视图的配置，也可以设置jstlView、Velocity等作为视图展示 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -59,5 +61,19 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
+    
+    <!-- 登录拦截器 -->
+    <bean id="loginHandlerIntercepter" class="org.solomon.login.controller.LoginHandlerIntercepter">
+        <property name="uncheckUrls">
+            <list> 
+                <value>/</value>
+                <value>/login.do</value>
+                <value>/loginOut.do</value>
+            </list>
+        </property>
+    </bean>
+    <mvc:interceptors>
+        <ref bean="loginHandlerIntercepter" />
+    </mvc:interceptors>
 
 </beans>

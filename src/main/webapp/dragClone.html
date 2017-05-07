@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Jqeruy 拖动复制</title>
+    <link rel="stylesheet" type="text/css" href="static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="static/default/css/week-style.css">
+    <link rel="stylesheet" type="text/css" href="static/semantic/grid.css">
+
+    <script type="text/javascript" src="static/jquery/jquery/jquery.js"></script>
+    <script type="text/javascript" src="static/jquery/jquery-ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="static/bootstrap/js/bootstrap.js"></script>
+
+
+    <script type="text/javascript">
+        $().ready(function(e) {
+            //拖拽复制体
+            $('div[id^="draggable"]').draggable({
+                helper: "clone",
+                cursor: "move"
+            });
+
+            //释放后
+            $('div[id^="target"]').droppable({
+                activeClass: "ui-state-hover",
+                hoverClass: "ui-state-active",
+                drop: function(event, ui) {
+                    $(this).children().remove();
+                    var source = ui.draggable.clone();
+
+                    var tempi = $('<i/>');
+                    tempi.addClass('glyphicon glyphicon-remove').hide();
+                    tempi.click(function(){
+                        source.remove();
+                    });
+                    tempi.appendTo(source);
+
+                    source.mouseenter(function() {
+                        $(this).find("i").show();
+                    });
+
+                    source.mouseleave(function() {
+                        $(this).find("i").hide();
+                    });
+
+                    $(this).append(source);
+
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div class="container" style="width:1000px">
+
+    <div class="panel panel-default" style="margin-top:20px">
+        <div class="panel-heading">可选课程</div>
+        <div class="panel-body">
+            <div class="ui seven column grid ">
+                <div class="column">
+                    <div class="source bg-primary" id="draggable1" style="background-color:#ef4136">
+                        <h4>前端开发</h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="source bg-primary" id="draggable2" style="background-color:#1d953f">
+                        <h4>数据库</h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="source bg-primary" id="draggable3" style="background-color:#840228">
+                        <h4>算法原理</h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="source bg-primary" id="draggable4" style="background-color:#f05b72">
+                        <h4>设计模式</h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="source bg-primary" id="draggable5" style="background-color:#472d56">
+                        <h4>配置管理</h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="source bg-primary" id="draggable6" style="background-color:#ea66a6">
+                        <h4>系统维护</h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="source bg-primary" id="draggable7" style="background-color:#65c294">
+                        <h4>Web开发</h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="source bg-primary" id="draggable8" style="background-color:#008792">
+                        <h4>思维导图</h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="source bg-primary" id="draggable9" style="background-color:#009ad6">
+                        <h4>安卓开发</h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="source bg-primary" id="draggable10" style="background-color:#281f1d">
+                        <h4>嵌入式开发</h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="source bg-primary" id="draggable11" style="background-color:#1b315e">
+                        <h4>大数据</h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="source bg-primary" id="draggable12" style="background-color:#007d65">
+                        <h4>机器学习</h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="source bg-primary" id="draggable13" style="background-color:#585eaa">
+                        <h4>云计算</h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="source bg-primary" id="draggable14" style="background-color:#f47920">
+                        <h4>图像识别</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">课程表</div>
+        <div class="panel-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>星期一</th>
+                        <th>星期二</th>
+                        <th>星期三</th>
+                        <th>星期四</th>
+                        <th>星期五</th>
+                        <th>星期六</th>
+                        <th>星期日</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div class="divcss5" id="target11"></div></td>
+                        <td><div class="divcss5" id="target12"></div></td>
+                        <td><div class="divcss5" id="target13"></div></td>
+                        <td><div class="divcss5" id="target14"></div></td>
+                        <td><div class="divcss5" id="target15"></div></td>
+                        <td><div class="divcss5" id="target16"></div></td>
+                        <td><div class="divcss5" id="target17"></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="divcss5" id="target21"></div></td>
+                        <td><div class="divcss5" id="target22"></div></td>
+                        <td><div class="divcss5" id="target23"></div></td>
+                        <td><div class="divcss5" id="target24"></div></td>
+                        <td><div class="divcss5" id="target25"></div></td>
+                        <td><div class="divcss5" id="target26"></div></td>
+                        <td><div class="divcss5" id="target27"></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="divcss5" id="target31"></div></td>
+                        <td><div class="divcss5" id="target32"></div></td>
+                        <td><div class="divcss5" id="target33"></div></td>
+                        <td><div class="divcss5" id="target34"></div></td>
+                        <td><div class="divcss5" id="target35"></div></td>
+                        <td><div class="divcss5" id="target36"></div></td>
+                        <td><div class="divcss5" id="target37"></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="divcss5" id="target41"></div></td>
+                        <td><div class="divcss5" id="target42"></div></td>
+                        <td><div class="divcss5" id="target43"></div></td>
+                        <td><div class="divcss5" id="target44"></div></td>
+                        <td><div class="divcss5" id="target45"></div></td>
+                        <td><div class="divcss5" id="target46"></div></td>
+                        <td><div class="divcss5" id="target47"></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="divcss5" id="target51"></div></td>
+                        <td><div class="divcss5" id="target52"></div></td>
+                        <td><div class="divcss5" id="target53"></div></td>
+                        <td><div class="divcss5" id="target54"></div></td>
+                        <td><div class="divcss5" id="target55"></div></td>
+                        <td><div class="divcss5" id="target56"></div></td>
+                        <td><div class="divcss5" id="target57"></div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

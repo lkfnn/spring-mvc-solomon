@@ -1,11 +1,9 @@
 package org.solomon;
 
-import java.util.List;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.solomon.dto.UserInfoDTO;
-import org.solomon.service.UserService;
+import org.solomon.login.dto.UserInfoDTO;
+import org.solomon.login.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -22,12 +20,12 @@ import lombok.extern.java.Log;
 public class TestUserService {
 
     @Autowired
-    private UserService userService;
+    private UserInfoService userInfoService;
 
     @Test
     public void testfindUserInfoList() {
-        List<UserInfoDTO> list = userService.findUserInfoList();
-        log.info(JSON.toJSONStringWithDateFormat(list, "yyyy-MM-dd HH:mm:ss"));
+        UserInfoDTO userInfoDTO = userInfoService.getUserInfoForLogin("admin", "123456");
+        log.info(JSON.toJSONStringWithDateFormat(userInfoDTO, "yyyy-MM-dd HH:mm:ss"));
     }
 
 }

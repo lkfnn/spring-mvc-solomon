@@ -28,7 +28,7 @@ public class DateUtils {
      *            日期格式
      * @return String
      */
-    public static String getCurrentDate(String format) {
+    public static String getCurrentDateTime(String format) {
         SimpleDateFormat sdf = new SimpleDateFormat(format);
         return sdf.format(new Date());
     }
