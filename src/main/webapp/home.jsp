@@ -45,7 +45,7 @@
                     <!-- 上方导航条右侧显示 -->
                     <ul class="nav navbar-nav navbar-right">
                         <li class="user-profile">
-                            <span>欢迎您：李飞飞</span>
+                            <span>欢迎您：${userInfoDTO.deptName} &nbsp; ${userInfoDTO.personName}</span>
                         </li>
                         <li class="exit">
                             <a href="/loginOut.do">

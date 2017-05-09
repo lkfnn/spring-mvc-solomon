@@ -4,9 +4,11 @@
 <mapper namespace="org.solomon.login.dao.UserInfoMapper">
 
     <select id="getUserInfoForLogin" parameterType="org.solomon.login.dto.UserInfoDTO" resultType="org.solomon.login.dto.UserInfoDTO">
-        SELECT userID, personID, deptID, userName, password
-          FROM userInfo
-         WHERE userName = #{userName} and password = #{password}
+        SELECT u.userID, u.personID, p.personName, p.deptID, t.deptName, u.userName
+          FROM userInfo u, PERSONINFO p ,DEPTINFO t
+         WHERE u.personID = p.personID 
+           AND p.deptID = t.deptID
+           AND userName = #{userName} and password = #{password}
     </select>
 
 </mapper>

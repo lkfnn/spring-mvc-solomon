@@ -34,6 +34,7 @@ public class LoginController {
         UserInfoDTO userInfoDTO = userInfoService.getUserInfoForLogin(userName, password);
         if (userInfoDTO != null) {
             request.getSession().setAttribute("userInfoDTO", userInfoDTO);
+            model.addAttribute("userInfoDTO", userInfoDTO);
             return "redirect:home";
         } else {
             model.addAttribute("error", "用户名或密码错误，请重新输入。");

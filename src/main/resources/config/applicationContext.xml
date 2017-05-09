@@ -30,8 +30,8 @@
 
     <!-- 初始化数据表结构 -->
     <jdbc:initialize-database data-source="dataSource" ignore-failures="ALL">
-        <jdbc:script location="classpath:init-sql/01_schema.sql" />
-        <jdbc:script location="classpath:init-sql/02_data.sql" />
+        <jdbc:script encoding="utf-8" location="classpath:init-sql/01_schema.sql" />
+        <jdbc:script encoding="utf-8" location="classpath:init-sql/02_data.sql" />
     </jdbc:initialize-database>
 
     <!-- 阿里 druid数据库连接池 -->
