@@ -1,6 +1,6 @@
 # spring-mvc-solomon
 
-Spring-Webmvc-Mybatis 开发框架实践。
+Spring-Mvc-Mybatis 开发框架实践。
 
 项目采用Maven构建。
 
