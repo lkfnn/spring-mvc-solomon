@@ -118,7 +118,7 @@ public class ZipUtil {
             ZipArchiveInputStream zais = null;
             try {
                 is = new FileInputStream(file);
-                zais = new ZipArchiveInputStream(is, "GBK");
+                zais = new ZipArchiveInputStream(is, "GBK", false, true);
                 ArchiveEntry archiveEntry = null;
                 while ((archiveEntry = zais.getNextEntry()) != null) {
                     // 获取文件名
